@@ -22,6 +22,9 @@
       width: 100vw;
       height: 100vh;
       cursor: url(./role/cursor.png) 50 50, auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #b {
@@ -118,11 +121,8 @@
     }
 
     #topbt {
-      width: 30vw;
-      height: 60vh;
-      position: absolute;
-      top: 20vh;
-      left: 40vw;
+      width: 80vw;
+      height: 80vh;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
@@ -132,12 +132,12 @@
 
     #topbt>input {
       width: 100%;
-      height: 15%;
+      height: 30%;
       cursor: url(./role/cursor.png) 50 50, auto;
-      color: red;
-      font-size: 24px;
+      color: white;
+      font-size: 36px;
       font-weight: bolder;
-      text-shadow: 1px 1px 2px yellow;
+      text-shadow: 1px 1px 2px black;
     }
 
     #reload {
@@ -148,16 +148,54 @@
       height: 5vh;
       cursor: url(./role/cursor.png) 50 50, auto;
     }
+
+    #easy {
+      background-image: url(./模式/easy.jpg);
+      background-size: cover
+    }
+
+    #normal {
+      background-image: url(./模式/normal.jpg);
+      background-size: cover
+    }
+
+    #hard {
+      background-image: url(./模式/hard.jpg);
+      background-size: cover
+    }
+
+    #easy:hover {
+      background-image: url(./模式/蒙德.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 15px rgba(255, 255, 255);
+      transform: translate(-10px, -10px);
+    }
+
+    #normal:hover {
+      background-image: url(./模式/離月.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 15px rgba(255, 255, 255);
+      transform: translate(-10px, -10px);
+    }
+
+    #hard:hover {
+      background-image: url(./模式/稻妻.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 10px 10px 15px rgba(255, 255, 255);
+      transform: translate(-10px, -10px);
+    }
   </style>
 </head>
 
 <body>
   <div id="main">
     <div id="topbt">
-      <input type="button" value="簡單" id="easy" style="background-image: url(./模式/easy.jpg); background-size: cover;">
-      <input type="button" value="普通" id="normal"
-        style="background-image: url(./模式/normal.jpg); background-size: cover;">
-      <input type="button" value="困難" id="hard" style="background-image: url(./模式/hard.jpg); background-size: cover;">
+      <input type="button" value="簡單" id="easy">
+      <input type="button" value="普通" id="normal">
+      <input type="button" value="困難" id="hard">
     </div>
     <div id="start">
       <img src="./role/back1.png" class="object">
@@ -242,7 +280,7 @@
               $('.object-fit').fadeTo(1000, 1)
               $('#b').css('z-index', '1')
               setTimeout(() => {
-                $('.object-fit').fadeTo(2000, 0)
+                $('.object-fit').fadeTo(1500, 0)
                 $('#b').css('z-index', '-1')
               }, 2000);
               clearTimeout()
